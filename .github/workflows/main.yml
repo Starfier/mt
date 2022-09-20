@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+
+  build:
+    runs-on: windows-latest
+
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: DownloadingRequirement
+        run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
+
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
